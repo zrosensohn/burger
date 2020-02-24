@@ -21,4 +21,8 @@ const orm = {
     }
 }
 
+orm.updateOne("burgers", "devoured", false, "burger_name", "Thanksgiving", function(results) {
+    console.log(results);
+});
+
 module.exports = orm;
