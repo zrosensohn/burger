@@ -13,15 +13,45 @@
 </head>
 
 <body>
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center py-3">
         <!--Might need to remove relative path-->
-        <img src="../../public/img/hotdog.png" alt="hot-dog" />
+        <img src="img/hotdog.png" alt="hot-dog" />
         <h1 class="display-3">Eat Da Burger</h1>
         <p class="lead">Never Forget Your Meat</p>
     </div>
+
+    <header class="container">
+        <div class="form-row align-items-center justify-content-center mt-5">
+            <div class="col-sm-3 my-1">
+                <label class="sr-only" for="burgerName">Burger Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-hamburger"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="burgerName" placeholder="Enter Burger Name">
+                </div>
+            </div>
+            <div class="col-auto my-1">
+                <button type="submit" id="newBurger" class="btn btn-warning">Submit</button>
+            </div>
+        </div>
+        <div class="validation form-row align-items-center justify-content-center mb-4">
+            <div class="valid d-none mt-1" role="alert">
+                Looks good!
+            </div>
+            <div class="invalid d-none mt-1" role="alert">
+                Please Enter A Buger Name!
+            </div>
+        </div>
+    </header>
+
     <main class="container">
         {{{body}}}
     </main>
+
+    <footer>
+
+    </footer>
 
 
     <!-- Optional JavaScript -->
@@ -34,6 +64,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/490a5cd13f.js" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -10,12 +10,15 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- insert rows here -->
+                {{#each burgers}}
+                {{#unless devoured}}{{!-- if not devoured --}}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Big Mac</td>
-                    <td><a name="devour" id="1" class="btn btn-warning" role="button">Devour</a></td>
+                    <th scope="row">{{id}}</th>
+                    <td>{{burger_name}}</td>
+                    <td><a id="{{id}}" data-burger-name="{{burger_name}}" data-devoured="1" class="btn btn-warning devourBtn" role="button">Devour</a></td>
                 </tr>
+                {{/unless}}
+                {{/each}}
             </tbody>
         </table>
     </div>
@@ -29,11 +32,14 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- insert rows here -->
+                {{#each burgers}}
+                {{#if devoured}}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Big Mac</td>
+                    <th scope="row">{{id}}</th>
+                    <td>{{burger_name}}</td>
                 </tr>
+                {{/if}}
+                {{/each}}
             </tbody>
         </table>
     </div>

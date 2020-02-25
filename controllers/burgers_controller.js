@@ -7,19 +7,19 @@ router.get("/", function(req, res) {
         let hbsObj = {
             burgers: data
         };
-    console.log(hbsObj);
+    // console.log(hbsObj);
     res.render("index", hbsObj);
     });
 });
 
 router.post("/api/burgers", function(req, res) {
-    burger.insert(req.params.name, req.params.devoured, (result) => {
+    burger.insert(req.body.name, (result) => {
         res.json({id: result.insertID});
     });
 });
 
-router.put("/api/burgers/:id/", function(req, res) {
-    let id = req.params.id;
+router.put("/api/burgers", function(req, res) {
+    let id = req.body.id;
     let devoured = req.body.devoured
     burger.update(devoured, "id", id, (result) => {
         if (result.changedRows == 0) {
